@@ -1,0 +1,21 @@
+.footer{
+    width: 100vw;
+    height: 6rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    &__text{
+        width: 100%;
+        z-index: 200;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        justify-content: center;
+        list-style: none;
+        font-family: $titleFont;
+        font-size: 1.5rem;
+        color: rgba(245, 245, 220, 0.5);
+        font-weight: 500;
+    }
+};

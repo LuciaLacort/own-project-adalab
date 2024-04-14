@@ -17,5 +17,10 @@
         font-family: $titleFont;
         font-size: 1.5rem;
         color: beige;
+        & a{
+            text-decoration: none;
+            color: inherit
+        }
+     
     }
 }

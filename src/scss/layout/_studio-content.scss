@@ -3,8 +3,8 @@
 //     flex-direction:row;
 //     justify-content:center;
 //     align-items:center;
-//     overflow:hidden;
-//     height:100vh;
+// overflow:hidden;
+//       height:100vh;
 //     font-family: 'Roboto', sans-serif;
 //     transition:.25s;
 
@@ -14,40 +14,77 @@
     width: 100vw;
     height: 10rem;
     background-color: white;
+
 }
 
 .materials_section{
-    padding-bottom: 6rem;
+   padding: 6rem;
+   position: relative;
+
 }
 .materials__article{
-    padding-bottom: 6rem;
+   padding-bottom: 6rem;
 
 }
 
-.credit {
-    position: absolute;
-    bottom:20px;
-    left:20px;
-    color:inherit;
- }
+// .credit {
+//     position: absolute;
+//     bottom:2rem;
+//     left:2rem;
+//     color:inherit;
+//  }
 
  .options__section{
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+   //  justify-content: space-around;
     align-items: center;
-   
+    position: absolute;
+
  }
+ .options__title{
+   font-family: $titleFont;
+   font-size: 2rem;
+   position: relative;
+   z-index: 200;
+   padding: 3rem;
+   color:#3f51b1;
+   font-weight: 600;
+
+ }
+
  .options {
     width: 100vw;
     display: grid;
     grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr;
-    align-items:stretch;
-    overflow:hidden;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 8rem;
+    position:absolute;
+    background: linear-gradient(
+    -45deg,
+    #3f51b1 0%,       /* Azul medio */
+    #5468b8 13%,      /* Azul */
+    #6a7dbf 25%,      /* Azul */
+    #7f92c6 38%,      /* Azul */
+    #95a7cd 50%,      /* Azul */
+    #abbdd5 62%,      /* Azul claro */
+    #c1d2dc 75%,      /* Azul claro */
+    #d7e7e3 87%,      /* Azul claro */
+    #edfcf0 100%      /* Azul pastel */
+);
+
+    animation: animate 6s ease-in-out infinite;
+    background-size: 400% 400%;
+    padding-bottom: 8rem;
+    
+   //  align-items:stretch;
+   //  overflow:hidden;
     // min-width:600px;
-    // max-width:900px;
-    width:calc(100% - 100px);
-    height:100vh;
+   //  // max-width:900px;
+   //  width:calc(100% - 10rem);
+  
     
     // @for $i from 1 through 4 {
     //    @media screen and (max-width:798px) {
@@ -59,39 +96,43 @@
     // }
     
     .option {
-       position: relative;
-       overflow:hidden;
-       min-width:60px;
-       margin:10px;
-       //border:0px solid --defaultColor;
+      //  position: relative;
+      //  overflow:hidden;
+       min-width:6rem;
+       margin-bottom:2rem;
+       margin-top: 2rem;
+       height: 22rem;
+      //  border:0px solid --defaultColor;
        background:var(--optionBackground, var(--defaultBackground, #E6E9ED));
-       background-size:auto 120%;
+       background-size:auto 130%;
        background-position:center;
+       background-color: #E6E9ED;
+    
        cursor: pointer;
        transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+       position:relative;
+       box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 
-       @for $i from 1 through length($optionDefaultColours) {
-          &:nth-child(#{$i}) {
-             --defaultBackground:#{nth($optionDefaultColours, $i)};
-          }
-       }
+      //  @for $i from 1 through length($optionDefaultColours) {
+      //     &:nth-child(#{$i}) {
+      //        --defaultBackground:#{nth($optionDefaultColours, $i)};
+      //     }
+      //  }
        &.active {
-          flex-grow:10000;
+         //  flex-grow:10000;
           transform:scale(1);
-          
-          max-width:600px;
-          margin:0px;
-          border-radius:40px;
-          
-          background-size:auto 100%;
-          .shadow {
-             box-shadow:inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
-          }
+         //  max-width:600px;
+          margin:0rem;
+          border-radius:4rem;
+          background-size:auto 110%;
+         //  .shadow {
+         //     box-shadow:inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+         //  }
           .label {
-             bottom:20px;
-             left:20px;
+             bottom:2rem;
+             left:2rem;
              .info >div {
-                left:0px;
+                left:0rem;
                 opacity:1;
              }
           }
@@ -102,57 +143,41 @@
        &:not(.active) {
           flex-grow:1;
           
-          border-radius:30px;
-          .shadow {
-             bottom:-40px;
-             box-shadow:inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
-          }
+          border-radius:3rem;
+         //  .shadow {
+         //     bottom:-40px;
+         //     box-shadow:inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+         //  }
           .label {
-             bottom:10px;
-             left:10px;
+             bottom:1rem;
+             left:1rem;
              .info >div {
-                left:20px;
+                left:2rem;
                 opacity:0;
              }
           }
        }
-       .shadow {
-          position: absolute;
-          bottom:0px;
-          left:0px;
-          right:0px;
-          
-          height:120px;
-          
-          transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-       }
+      //  .shadow {
+      //     position: absolute;
+      //     bottom:0px;
+      //     left:0px;
+      //     right:0px;
+      //     height:120px;
+      //     transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+      //  }
        .label {
           display:flex;
           position: absolute;
-          right:0px;
-
-          height:40px;
+          right:0;
+          height:4rem;
           transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-          .icon {
-             display:flex;
-             flex-direction:row;
-             justify-content:center;
-             align-items:center;
-             
-             min-width:40px;
-             max-width:40px;
-             height:40px;
-             border-radius:100%;
-
-             background-color:white;
-             color:var(--defaultBackground);
-          }
+       
           .info {
              display:flex;
              flex-direction:column;
              justify-content:center;
              
-             margin-left:10px;
+             margin-left:1rem;
              
              color:white;
              
@@ -165,9 +190,13 @@
              .main {
                 font-weight:bold;
                 font-size:1.2rem;
+                font-family: $textFont;
+                color: beige;
              }
              .sub {
                 transition-delay:.1s;
+                font-family: $textFont;
+         
              }
           }
        }

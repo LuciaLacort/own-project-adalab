@@ -49,7 +49,7 @@
    position: relative;
    z-index: 200;
    padding: 3rem;
-   color:#3f51b1;
+   color: black;
    font-weight: 600;
 
  }
@@ -63,19 +63,23 @@
     padding-top: 8rem;
     position:absolute;
     background: linear-gradient(
-    -45deg,
-    #3f51b1 0%,       /* Azul medio */
-    #5468b8 13%,      /* Azul */
-    #6a7dbf 25%,      /* Azul */
-    #7f92c6 38%,      /* Azul */
-    #95a7cd 50%,      /* Azul */
-    #abbdd5 62%,      /* Azul claro */
-    #c1d2dc 75%,      /* Azul claro */
-    #d7e7e3 87%,      /* Azul claro */
-    #edfcf0 100%      /* Azul pastel */
-);
+      -45deg,
+      #ffe0cc 0%,       /* Melocotón pastel claro */
+      #ffd9c2 13%,      /* Melocotón pastel claro */
+      #ffd1b6 25%,      /* Melocotón pastel claro */
+      #ffc9ab 38%,      /* Melocotón pastel claro */
+      #ffc0a0 50%,      /* Melocotón pastel claro */
+      #f2e7ca 62%,      /* Beige */
+      #f4e8d1 75%,      /* Beige */
+      #f7ecd6 87%,      /* Beige */
+      #faf3e2 100%      /* Beige */
+  );
+  
+  
+  
 
-    animation: animate 6s ease-in-out infinite;
+
+    animation: animate 9s ease-in-out infinite;
     background-size: 400% 400%;
     padding-bottom: 8rem;
     

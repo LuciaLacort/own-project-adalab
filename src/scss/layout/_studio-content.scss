@@ -56,32 +56,35 @@
 
  .options {
     width: 100vw;
-    display: grid;
-    grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr;
+   //  display: grid;
+   //  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
     padding-top: 8rem;
     position:absolute;
     background: linear-gradient(
       -45deg,
-      #ffe0cc 0%,       /* Melocotón pastel claro */
-      #ffd9c2 13%,      /* Melocotón pastel claro */
-      #ffd1b6 25%,      /* Melocotón pastel claro */
-      #ffc9ab 38%,      /* Melocotón pastel claro */
-      #ffc0a0 50%,      /* Melocotón pastel claro */
-      #f2e7ca 62%,      /* Beige */
-      #f4e8d1 75%,      /* Beige */
-      #f7ecd6 87%,      /* Beige */
-      #faf3e2 100%      /* Beige */
-  );
-  
-  
-  
-
-
+      #ffe0cc 0%,      
+      #ffd9c2 13%,     
+      #ffc9ab 38%,      
+      #ffc0a0 50%,      
+      #f2e7ca 62%,      
+      #f4e8d1 75%,      
+      #f7ecd6 87%,      
+      #faf3e2 100% 
+    );
     animation: animate 9s ease-in-out infinite;
     background-size: 400% 400%;
     padding-bottom: 8rem;
+    @media (min-width: 768px){
+
+      display: flex;
+      flex-direction: row;
+
+      // grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); /* Ajusta los valores según lo necesites */
+      grid-gap: 1rem; /* Agrega un espacio entre las columnas */
+      // grid-auto-rows: auto;
+   };
     
    //  align-items:stretch;
    //  overflow:hidden;
@@ -111,11 +114,14 @@
        background-size:auto 130%;
        background-position:center;
        background-color: #E6E9ED;
-    
        cursor: pointer;
        transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
        position:relative;
        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+       @media (min-width: 768px){
+         width: 3rem;
+         margin-top: 1.5rem;
+       };
 
       //  @for $i from 1 through length($optionDefaultColours) {
       //     &:nth-child(#{$i}) {
@@ -129,6 +135,11 @@
           margin:0rem;
           border-radius:4rem;
           background-size:auto 110%;
+          @media (min-width: 768px){
+            width: 30rem;
+
+          };
+
          //  .shadow {
          //     box-shadow:inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
          //  }
@@ -146,7 +157,6 @@
        }
        &:not(.active) {
           flex-grow:1;
-          
           border-radius:3rem;
          //  .shadow {
          //     bottom:-40px;
